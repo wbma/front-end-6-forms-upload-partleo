@@ -1,20 +1,33 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-
-import { AppComponent } from './app.component';
-
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {LoginComponent} from './services/login/login.component';
+import {FrontComponent} from './services/front/front.component';
+import {TopBarComponent} from './services/top-bar/top-bar.component';
+import {RegisterComponent} from './services/register/register.component';
+import {LogoutComponent} from './services/logout/logout.component';
+import {MediaService} from './services/media.service';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    FrontComponent,
+    TopBarComponent,
+    RegisterComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [MediaService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

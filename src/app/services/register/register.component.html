@@ -1,0 +1,17 @@
+<form novalidate (submit)="register()">
+  <div id="signin">
+    <label>Username:<br>
+      <input [(ngModel)]="user.username" title="Please use only letters and numbers, length min 4 and max 20" type="text" name="username" placeholder="new username" required pattern="^[A-z0-9]{4,20}$"><br>
+    </label>
+    <label>Password:<br>
+      <input [(ngModel)]="user.password" title="Please use only letters and numbers, length min 6" type="password" name="password" placeholder="password" required pattern="^[A-z0-9]{6,}$"><br>
+    </label>
+    <label>Email:<br>
+      <input [(ngModel)]="user.email" title="Please use form you@example.com" type="email" name="email" placeholder="you@example.com" required pattern="^[a-z0-9]+[a-z0-9.-][a-z0-9]+[@][a-z0-9]+[.][a-z]{2,3}$"><br>
+    </label>
+    <label>Full name:<br>
+      <input [(ngModel)]="user.full_name" title="Please use only letters" type="text" name="fullName" placeholder="Matti Meikäläinen" pattern="^[A-z0-9]{4,30}$"><br>
+    </label>
+    <input class="login" type="submit" value="Sign in">
+  </div>
+</form>
