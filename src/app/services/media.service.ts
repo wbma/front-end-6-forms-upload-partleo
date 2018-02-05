@@ -8,9 +8,9 @@ import {Router} from '@angular/router';
 @Injectable()
 export class MediaService {
 
-  username: String;
-  password: String;
-  status: String;
+  username: string;
+  password: string;
+  status: string;
   apiUrl = 'http://media.mw.metropolia.fi/wbma';
 
   constructor(private http: HttpClient, private  router: Router) {
@@ -48,5 +48,13 @@ export class MediaService {
         localStorage.getItem('token')),
     };
     return this.http.get(this.apiUrl + '/users/user', settings);
+  }
+
+  upload (media) {
+    const settings = {
+      headers: new HttpHeaders().set('x-access-token',
+        localStorage.getItem('token')),
+    };
+    return this.http.post( this.apiUrl + '/media', media, settings);
   }
 }

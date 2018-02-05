@@ -1,0 +1,14 @@
+<form (submit)="startUpload()">
+  <div id="upload">
+    <label>Choose a file:<br>
+      <input type="file" accept="image/*" name="upload" (change)="setFile($event)"><br>
+    </label>
+    <label>File name:<br>
+      <input [(ngModel)]="media.title" type="text" name="file"><br>
+    </label>
+    <label>Description:<br>
+      <textarea [(ngModel)]="media.description" type="text" name="descripton"></textarea><br>
+    </label>
+    <button type="submit">Upload</button>
+  </div>
+</form>

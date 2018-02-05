@@ -10,6 +10,7 @@ import {LogoutComponent} from './services/logout/logout.component';
 import {MediaService} from './services/media.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { UploadComponent } from './services/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {FormsModule} from '@angular/forms';
     TopBarComponent,
     RegisterComponent,
     LogoutComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
