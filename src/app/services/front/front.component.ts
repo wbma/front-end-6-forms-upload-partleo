@@ -13,6 +13,8 @@ export class FrontComponent implements OnInit {
   constructor(public mediaService: MediaService, private router: Router) {
   }
 
+  mediaArray: any;
+
   ngOnInit() {
     if (localStorage.getItem('token') !== null) {
       this.mediaService.getUserData().subscribe(res => {
@@ -24,6 +26,8 @@ export class FrontComponent implements OnInit {
     } else {
       this.router.navigate(['login']);
     }
+    this.mediaService.getAllMedia().subscribe(data => {
+      this.mediaArray = data;
+    });
   }
-
 }
